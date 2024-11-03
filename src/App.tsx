@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Card from './components/Card/Card';
 import ToDoList from './components/ToDoList/ToDoList';
+import Button from './components/Button/Button';
 
 const App = () => {
   const [count, setCount] = useState<number>(0);
@@ -21,15 +22,15 @@ const App = () => {
         height: '100vh',
       }}
     >
-      {/* <Button text="count is" type="primary" onClick={onClick} count={count} /> */}
-      {/* <Card
+      <Button text="count is" type="primary" onClick={onClick} count={count} />
+      <Card
         url="https://avatar.iran.liara.run/public/boy"
         name="Vasil Vangjeli"
         role="Full Stack Developer"
         facebook="https://www.facebook.com/vasil.vangjeli"
         linkedin="https://www.linkedin.com/in/vasil-vangjeli-487748232/"
         github="https://github.com/vangjeli"
-      /> */}
+      />
 
       <ToDoList />
     </div>
