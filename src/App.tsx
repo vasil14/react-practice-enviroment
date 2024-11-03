@@ -1,35 +1,38 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from 'react';
+import Card from './components/Card/Card';
+import ToDoList from './components/ToDoList/ToDoList';
 
-function App() {
-  const [count, setCount] = useState(0)
+const App = () => {
+  const [count, setCount] = useState<number>(0);
+
+  const onClick = () => setCount((count) => count + 1);
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
-}
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
+        flexDirection: 'column',
+        gap: '10px',
+        margin: 'auto',
+        maxWidth: '1000px',
+        width: '100%',
+        height: '100vh',
+      }}
+    >
+      {/* <Button text="count is" type="primary" onClick={onClick} count={count} /> */}
+      {/* <Card
+        url="https://avatar.iran.liara.run/public/boy"
+        name="Vasil Vangjeli"
+        role="Full Stack Developer"
+        facebook="https://www.facebook.com/vasil.vangjeli"
+        linkedin="https://www.linkedin.com/in/vasil-vangjeli-487748232/"
+        github="https://github.com/vangjeli"
+      /> */}
 
-export default App
+      <ToDoList />
+    </div>
+  );
+};
+export default App;
