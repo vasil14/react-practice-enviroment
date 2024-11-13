@@ -8,6 +8,7 @@ import {
   CardSocials,
 } from './styles';
 import { FacebookLogo, GithubLogo, LinkedinLogo } from '@phosphor-icons/react';
+import { useState } from 'react';
 
 interface CardProps {
   url: string;
@@ -20,11 +21,18 @@ interface CardProps {
 
 const Card = (props: CardProps) => {
   const { url, name, role, facebook, linkedin, github } = props;
+  const [darkTheme, setDarkTheme] = useState(false);
+  console.log(darkTheme);
+
+  const handleTheme = () => {
+    setDarkTheme((prev) => !prev);
+  };
+
   return (
     <>
       <StyledCard>
-        <CardHeader className="card-header">
-          <Avatar className="avatar" src={url} />
+        <CardHeader className="card-header" $darkTheme={darkTheme}>
+          <Avatar className="avatar" src={url} $darkTheme={darkTheme} />
         </CardHeader>
         <CardBody>
           <div className="card-title">{name}</div>
@@ -48,7 +56,9 @@ const Card = (props: CardProps) => {
           )}
         </CardSocials>
         <CardFooter>
-          <Button type="primary">Contact Me</Button>
+          <Button type="primary" onClick={handleTheme}>
+            Contact Me
+          </Button>
         </CardFooter>
       </StyledCard>
     </>
