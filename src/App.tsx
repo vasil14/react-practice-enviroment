@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import Card from './components/Card/Card';
-import ToDoList from './components/ToDoList/ToDoList';
-import Button from './components/Button/Button';
+import { useState } from "react";
+import Card from "./components/Card/Card";
+import ToDoList from "./components/ToDoList/ToDoList";
+import Button from "./components/Button/Button";
+import ToggleVisibility from "./components/ToggleVisibility/ToggleVisibility";
 
 const App = () => {
   const [count, setCount] = useState<number>(0);
@@ -11,15 +12,15 @@ const App = () => {
   return (
     <div
       style={{
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        flexDirection: 'column',
-        gap: '10px',
-        margin: 'auto',
-        maxWidth: '1000px',
-        width: '100%',
-        height: '100vh',
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+        flexDirection: "column",
+        gap: "10px",
+        margin: "auto",
+        maxWidth: "1000px",
+        width: "100%",
+        height: "100vh",
       }}
     >
       <Button text="count is" type="primary" onClick={onClick} count={count} />
@@ -31,8 +32,9 @@ const App = () => {
         linkedin="https://www.linkedin.com/in/vasil-vangjeli-487748232/"
         github="https://github.com/vangjeli"
       />
-
       <ToDoList />
+
+      <ToggleVisibility />
     </div>
   );
 };
