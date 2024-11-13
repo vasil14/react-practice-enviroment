@@ -1,7 +1,7 @@
 {
   "homepage": "https://vasil14.github.io/react-practice-enviroment",
-  "name": "react-practice-envirome",
-  "private": true,
+  "name": "react-practice-enviroment",
+  "private": false,
   "version": "0.0.0",
   "type": "module",
   "scripts": {
