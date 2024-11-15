@@ -1,11 +1,14 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Card from "./components/Card/Card";
 import ToDoList from "./components/ToDoList/ToDoList";
 import Button from "./components/Button/Button";
 import ToggleVisibility from "./components/ToggleVisibility/ToggleVisibility";
+import Rating from "./components/Rating/Rating";
 
 const App = () => {
   const [count, setCount] = useState<number>(0);
+
+  useEffect(() => {}, [count]);
 
   const onClick = () => setCount((count) => count + 1);
 
@@ -35,6 +38,7 @@ const App = () => {
       <ToDoList />
 
       <ToggleVisibility />
+      <Rating />
     </div>
   );
 };
