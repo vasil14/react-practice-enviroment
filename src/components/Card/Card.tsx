@@ -22,7 +22,6 @@ interface CardProps {
 const Card = (props: CardProps) => {
   const { url, name, role, facebook, linkedin, github } = props;
   const [darkTheme, setDarkTheme] = useState(false);
-  console.log(darkTheme);
 
   const handleTheme = () => {
     setDarkTheme((prev) => !prev);
