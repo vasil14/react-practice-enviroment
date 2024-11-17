@@ -8,20 +8,20 @@ const StyledCard = styled.div`
   border-radius: 20px;
 `;
 
-const CardHeader = styled.div<{ $darkTheme?: boolean }>`
-  background-color: ${(props) => (props.$darkTheme ? '#212121' : '#0a85be')};
+const CardHeader = styled.div<{ darkTheme?: boolean }>`
+  background-color: ${(props) => (props.darkTheme ? '#212121' : '#0a85be')};
   color: #fff;
   border-radius: 20px;
   width: 100%;
   height: 120px;
 `;
 
-const Avatar = styled.img<{ $darkTheme?: boolean }>`
+const Avatar = styled.img<{ darkTheme?: boolean }>`
   width: 100px;
   height: 100px;
   border-radius: 50%;
   border: 4px solid;
-  border-color: ${(props) => (props.$darkTheme ? '#212121' : '#0a85be')};
+  border-color: ${(props) => (props.darkTheme ? '#212121' : '#0a85be')};
   position: absolute;
   top: 100px;
   left: 50%;

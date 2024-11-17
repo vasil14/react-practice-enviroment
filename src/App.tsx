@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import Card from './components/Card/Card';
 import ToDoList from './components/ToDoList/ToDoList';
 import Button from './components/Button/Button';
@@ -10,12 +10,11 @@ const App = () => {
   const [count, setCount] = useState<number>(0);
   const [isVisible, setIsVisible] = useState<boolean>(false);
 
-  console.log(isVisible);
-
-  useEffect(() => {}, [count]);
-  0;
-
   const onClick = () => {
+    setCount((prev) => prev + 1);
+  };
+
+  const triggerToast = () => {
     setIsVisible(true);
     setTimeout(() => {
       setIsVisible(false);
@@ -41,6 +40,7 @@ const App = () => {
       }}
     >
       <Button text="count is" type="primary" onClick={onClick} count={count} />
+      <Button text="Trigger Toast" type="primary" onClick={triggerToast} />
       <Card
         url="https://avatar.iran.liara.run/public/boy"
         name="Vasil Vangjeli"
@@ -53,7 +53,7 @@ const App = () => {
 
       <ToggleVisibility />
       <Rating />
-      <Toast isVisible={isVisible} closeToast={closeToast} />
+      <Toast isVisible={isVisible} closeToast={closeToast} type="success" />
     </div>
   );
 };

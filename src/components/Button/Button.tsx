@@ -1,22 +1,19 @@
-import { Button as ButtonAntd } from 'antd'
+import { Button as ButtonAntd } from 'antd';
 
 interface Props {
-  text: string,
-  type: 'text' | 'link' | 'primary' | 'default' | 'dashed',
-  count: number,
-  onClick: () => void
+  text: string;
+  type: 'text' | 'link' | 'primary' | 'default' | 'dashed';
+  count?: number;
+  onClick: () => void;
 }
 
-const Button = (props:Props) => {
-  const { text, type, count, onClick } = props
+const Button = (props: Props) => {
+  const { text, type, count, onClick } = props;
   return (
-    <ButtonAntd
-      type={type} 
-      onClick={onClick}
-    >
-      {text} {count} 
+    <ButtonAntd type={type} onClick={onClick}>
+      {text} {count}
     </ButtonAntd>
-  )
-}
+  );
+};
 
-export default Button
+export default Button;

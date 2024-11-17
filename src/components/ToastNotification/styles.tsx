@@ -9,7 +9,7 @@ const StyledToast = styled.div`
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
   z-index: 9999;
   border-radius: 10px;
-  border-left: 5px solid #0abe46;
+  border-left: 5px solid ${(props) => props.color};
   overflow: hidden;
   transform: translateX(calc(100% + 20px));
   transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.35);
@@ -32,7 +32,7 @@ const StyledToastIcon = styled.div`
   width: 35px;
   height: 35px;
   border-radius: 50%;
-  background-color: #0abe46;
+  background-color: ${(props) => props.color};
   color: #fff;
 `;
 
@@ -76,7 +76,7 @@ const StyledToastProgress = styled.div`
     right: 0;
     height: 100%;
     width: 100%;
-    background-color: #0abe46;
+    background-color: ${(props) => props.color};
   }
 
   &.active::before {
