@@ -1,9 +1,6 @@
 import styled from 'styled-components';
 
 const StyledToast = styled.div`
-  position: fixed;
-  top: 20px;
-  right: 20px;
   background-color: #fff;
   padding: 15px 40px 15px 20px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);

@@ -1,6 +1,7 @@
 import { Check, Trash } from '@phosphor-icons/react';
 import { Button, Card, Col, Input, Row, Space } from 'antd';
 import { useState } from 'react';
+import { useToast } from '../../context/ToastContext/ToastContext';
 
 interface ToDo {
   text: string;
@@ -8,6 +9,7 @@ interface ToDo {
 }
 
 const ToDoList = () => {
+  const { showToast } = useToast();
   const [todos, setTodos] = useState<ToDo[]>([]);
   const [inputValue, setInputValue] = useState<string>('');
 
@@ -16,10 +18,12 @@ const ToDoList = () => {
     let newTodo = { text: inputValue, status: false };
     setTodos([...todos, newTodo]);
     setInputValue('');
+    showToast('success', 'Aded', 'ToDo added successfully', 3000);
   };
 
   const removeToDo = (index: number) => {
     setTodos(todos.filter((_, i) => i !== index));
+    showToast('success', 'Removed', 'ToDo removed successfully', 3000);
   };
 
   const completeToDo = (index: number) => {
@@ -28,6 +32,7 @@ const ToDoList = () => {
         i === index ? { ...todo, status: !todo.status } : todo
       )
     );
+    showToast('success', 'Done', 'ToDo completed successfully', 3000)
   };
 
   return (
